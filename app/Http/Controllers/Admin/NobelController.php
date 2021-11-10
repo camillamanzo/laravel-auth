@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Nobel;
 
 class NobelController extends Controller
 {
@@ -14,7 +15,8 @@ class NobelController extends Controller
      */
     public function index()
     {
-        //
+        $nobels = Nobel::all();
+        return view ('guests.home', compact('nobels'));
     }
 
     /**
